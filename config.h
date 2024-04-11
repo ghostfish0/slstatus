@@ -76,7 +76,7 @@ static const char mic[] =
 
 static const struct arg args[] = {
     /* function format          argument */
-    {cpu_perc, "  %s% |", NULL},
+    {cpu_perc, "  %s%% |", NULL},
     {run_command, "  %s |", vol},
     {run_command, "  %s |", mic},
     {wifi_essid, " 󰖩 %s |", "wlan0"},
