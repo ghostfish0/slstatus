@@ -66,20 +66,20 @@ static const char unknown_str[] = "n/a";
 
 static const char vol[] =
     "[ `amixer sget Master | tail -n 1 | awk '{print $6;}'` = \"[on]\" ] \
-                                   && printf \"`amixer sget Master | tail -n 1 | awk '{print $5;}' | grep -Po '\\[\\K[^%]*'`%%\" \
+                                   && printf \"`amixer sget Master | tail -n 1 | awk '{print $5;}' | grep -Po '\\[\\K[^%]*'`\" \
                                    || printf 'Off'";
 
 static const char mic[] =
     "[ `amixer sget Capture | tail -n 1 | awk '{print $6;}'` = \"[on]\" ] \
-                                   && printf \"`amixer sget Capture | tail -n 1 | awk '{print $5;}' | grep -Po '\\[\\K[^%]*'`%%\" \
+                                   && printf \"`amixer sget Capture | tail -n 1 | awk '{print $5;}' | grep -Po '\\[\\K[^%]*'`\" \
                                    || printf 'Off'";
 
 static const struct arg args[] = {
     /* function format          argument */
-    {cpu_perc, "  %s%% |", NULL},
+    {cpu_perc, "  %s |", NULL},
     {run_command, "  %s |", vol},
     {run_command, "  %s |", mic},
     {wifi_essid, " 󰖩 %s |", "wlan0"},
-    {battery_perc, "  %s%% |", "BAT0"},
+    {battery_perc, "  %s |", "BAT0"},
     {datetime, " 󰥔 %s", "%a %R"},
 };
