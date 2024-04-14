@@ -4,7 +4,7 @@
 const unsigned int interval = 1000;
 
 /* text to show if no value can be retrieved */
-static const char unknown_str[] = "n/a";
+static const char unknown_str[] = "";
 
 /* maximum output string length */
 #define MAXLEN 2048
@@ -71,15 +71,16 @@ static const char vol[] =
 
 static const char mic[] =
     "[ `amixer sget Capture | tail -n 1 | awk '{print $6;}'` = \"[on]\" ] \
-                                   && printf \"`amixer sget Capture | tail -n 1 | awk '{print $5;}' | grep -Po '\\[\\K[^%]*'`\" \
-                                   || printf 'Off'";
+                                   && printf \" `amixer sget Capture | tail -n 1 | awk '{print $5;}' | grep -Po '\\[\\K[^%]*'` |\" \
+                                   || printf ''";
 
 static const struct arg args[] = {
     /* function format          argument */
     {cpu_perc, "  %s |", NULL},
-    {run_command, "  %s |", vol},
-    {run_command, "  %s |", mic},
-    {wifi_essid, " 󰖩 %s |", "wlan0"},
-    {battery_perc, "  %s |", "BAT0"},
+    {run_command, "   %s |", vol},
+    {run_command, " %s", mic},
+    {wifi_essid, "󰖩 %s |", "wlan0"},
+    {battery_state, " %s", "BAT0"},
+    {battery_perc, " %s |", "BAT0"},
     {datetime, " 󰥔 %s", "%a %R"},
 };

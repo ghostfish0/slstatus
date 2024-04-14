@@ -1,0 +1,23 @@
+[
+  {
+    "arguments": [
+      "/sbin/cc",
+      "-c",
+      "-I/usr/X11R6/include",
+      "-D_DEFAULT_SOURCE",
+      "-DVERSION=\"1.0\"",
+      "-std=c99",
+      "-pedantic",
+      "-Wall",
+      "-Wextra",
+      "-Wno-unused-parameter",
+      "-Os",
+      "-o",
+      "slstatus.o",
+      "slstatus.c"
+    ],
+    "directory": "/home/tinnguyen/Downloads/slstatus",
+    "file": "/home/tinnguyen/Downloads/slstatus/slstatus.c",
+    "output": "/home/tinnguyen/Downloads/slstatus/slstatus.o"
+  }
+]
