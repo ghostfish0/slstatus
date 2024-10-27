@@ -80,7 +80,6 @@ static const struct arg args[] = {
     {run_command, "   %s |", vol},
     {run_command, " %s", mic},
     {wifi_essid, "󰖩 %s |", "wlan0"},
-    {battery_state, " %s", "BAT0"},
-    {battery_perc, " %s |", "BAT0"},
+    {bluetooth_status, "  %s |", NULL},  // Add this line
     {datetime, " 󰥔 %s", "%a %R"},
 };
